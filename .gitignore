@@ -1,0 +1,6 @@
+__pycache__
+.vscode
+docker
+
+qexportenv.py
+script.log

@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-import sys
 import os
+from pathlib import Path
 
-args = sys.argv
-if len(args) > 1:
-    if args[1] == "f":
-        commandprefix = "GO111MODULE=off "
-    else:
-        commandprefix = ""
+if Path("go.mod").is_file():
+    commandprefix = ""
+else:
+    commandprefix = "GO111MODULE=off "
 
 os.system(f"{commandprefix}go build")

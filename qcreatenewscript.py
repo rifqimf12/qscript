@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import sys, os
+from qtools import getScriptDir
 
 
 def createNewPythonScript(fileName):
-    f = open(f"{os.getcwd()}/{fileName}", "a")
+    f = open(f"{getScriptDir()}/{fileName}", "a")
     f.write("#!/usr/bin/env python3\n")
     f.close()
 

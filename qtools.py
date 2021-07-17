@@ -4,6 +4,10 @@ import yaml
 from pathlib import Path
 
 
+def getScriptDir():
+    return __file__.rsplit("/", 1)[0]
+
+
 def getGoModuleOption():
     if Path("go.mod").is_file():
         s = ""

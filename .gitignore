@@ -2,5 +2,6 @@ __pycache__
 .vscode
 docker
 
+config.py
 qexportenv.py
 script.log

@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 import os
-from pathlib import Path
+from qtools import getGoModuleOption
 
-if Path("go.mod").is_file():
-    commandprefix = ""
-else:
-    commandprefix = "GO111MODULE=off "
 
-os.system(f"{commandprefix}go build")
+os.system(f"{getGoModuleOption()}go build")

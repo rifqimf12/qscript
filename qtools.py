@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 import os
 import yaml
+from pathlib import Path
+
+
+def getGoModuleOption():
+    if Path("go.mod").is_file():
+        s = ""
+    else:
+        s = "GO111MODULE=off "
+    return s
 
 
 def curdir():

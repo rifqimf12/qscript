@@ -2,4 +2,5 @@
 from qtools import getScriptDir
 import os
 
-os.system(f"cd {getScriptDir()}")
+os.chdir(getScriptDir())
+os.system("/bin/bash")

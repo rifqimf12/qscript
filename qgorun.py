@@ -20,13 +20,19 @@ if len(args) > 1:
         env = "assembly"
     else:
         env = args[1]
+    if args[1] == "0":
+        isExportingEnv = False
+    else:
+        isExportingEnv = True
 else:
     env = "dev"
-exportEnvs(
-    readEnvsFromDockerYML(
-        f"docker/docker-compose.{env}.yml", "services", curdir(), "environment"
+
+if isExportingEnv:
+    exportEnvs(
+        readEnvsFromDockerYML(
+            f"docker/docker-compose.{env}.yml", "services", curdir(), "environment"
+        )
     )
-)
 
 logFileName = createLogFile()
 command = (
